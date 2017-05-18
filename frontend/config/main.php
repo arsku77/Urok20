@@ -43,6 +43,7 @@ return [
             'rules' => [
                 'novosti' => 'test/index',
                 'novosti/<id:\d+>' => 'test/view',
+                'news-count' => 'news/list',
             ],
         ],
         'stringHelper' => [
