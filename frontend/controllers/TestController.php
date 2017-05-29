@@ -18,8 +18,8 @@ class TestController extends Controller
     {
         $max = Yii::$app->params['maxNewsInList'];
 
-       $list = Test::getNewsList($max);
-       
+        $list = Test::getNewsList($max);
+
 //       print_r($list);die;
         return $this->render('index', [
             'list' => $list,
@@ -47,17 +47,16 @@ class TestController extends Controller
      */
     public function actionMail()
     {
-    $result = Yii::$app->mailer->compose()
-            ->setFrom('arsku77@gmail.com')
+        $result = Yii::$app->mailer->compose()
+            ->setFrom('arvidija77@gmail.com')
             ->setTo('arsku77@gmail.com')
             ->setSubject('Тема сообųųžžщения')
             ->setTextBody('Текст сообщėęęšėęšėš ųįųįūų čč ения')
             ->setHtmlBody('<b>текст сообщенęęę ššš ия в формате HTML</b>')
             ->send();
 
-    var_dump($result);
+        var_dump($result);
         //die;
 
     }
 }
-

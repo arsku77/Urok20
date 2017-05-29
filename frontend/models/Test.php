@@ -36,7 +36,7 @@ class Test
         $sql = 'SELECT * FROM news LIMIT ' . $max ;
         $result = Yii::$app->db->createCommand($sql)->queryAll();
 
-       // $helper = Yii::$app->stringHelper;
+        // $helper = Yii::$app->stringHelper;
 
         if(!empty($result) && is_array($result)) {
             foreach ($result as &$item) {//žemiau yra mūs sukurtas komponentas

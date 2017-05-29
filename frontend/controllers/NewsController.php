@@ -18,8 +18,8 @@ class NewsController extends Controller
     {
         //$max = Yii::$app->params['maxNewsInList'];
 
-       $list = Test::getAllNewsList();
-       
+        $list = Test::getAllNewsList();
+
 //       print_r($list);die;
         return $this->render('index', [
             'list' => $list,
@@ -27,4 +27,3 @@ class NewsController extends Controller
     }
 
 }
-
