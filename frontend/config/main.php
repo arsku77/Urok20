@@ -10,7 +10,7 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'language' => 'lt',
+    'language' => 'ru',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
@@ -45,6 +45,8 @@ return [
                 'novosti' => 'test/index',
                 'novosti/<id:\d+>' => 'test/view',
                 'news-count' => 'news/list',
+                'robotnik/<id:\d+>' => 'employee/view',
+
             ],
         ],
         'stringHelper' => [
@@ -52,4 +54,12 @@ return [
         ],
     ],
     'params' => $params,
+    'aliases' => [
+        '@files' => '/var/www/project/frontend/web/files',
+        '@photos' => '@files/photos',
+        '@gallery' => '/files/photos/gallery',
+        '@gallerynivo' => '/files/photos/slidders/nivo',
+        '@sliddersnivoupload' => '@files/photos/slidders/nivo',
+    ]
+
 ];
