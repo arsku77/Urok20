@@ -38,28 +38,36 @@ AppAsset::register($this);//pajungiami resursai ir nustatomos kai kurių resurs�
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Домашки', 'url' => ['/publisher/index'], 'items' => [
+            ['label' => 'Publisher', 'url' => ['/publisher/index']],
+            ['label' => 'Bookshop', 'url' => ['/bookshop/index']],
+            ['label' => 'Author', 'url' => ['/author/index']],
+            ['label' => 'Order Window', 'url' => ['/window/order']],
+            ['label' => 'Search Fulltext MySQL', 'url' => ['/search/index']],
+            ['label' => 'Search Fulltext Sphinx', 'url' => ['/search/advanced']],
+
+        ]],
         ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Oerder Window', 'url' => ['/window/order']],
-        ['label' => 'Products', 'url' => ['productshop/index'], 'items' => [
-            ['label' => 'New Product', 'url' => ['productshop/product']],
+        ['label' => 'experiments', 'url' => ['productshop/index'], 'items' => [
+            ['label' => 'Branch of company', 'url' => ['branch/index']],
+            ['label' => 'Parent Company', 'url' => ['company/index']],
            // ['label' => 'Most Popular', 'url' => ['product/index', 'tag' => 'popular']],
         ]],
-        ['label' => 'Categories', 'url' => ['productshop/index'], 'items' => [
-            ['label' => 'New Category', 'url' => ['productshop/category']],
-        ]],
-        ['label' => 'Suppliers', 'url' => ['productshop/index'], 'items' => [
-            ['label' => 'New Supplier', 'url' => ['productshop/supplier']],
-        ]],
-
+//        ['label' => 'Categories', 'url' => ['productshop/index'], 'items' => [
+//            ['label' => 'New Category', 'url' => ['productshop/category']],
+//            ['label' => 'New Supplier', 'url' => ['productshop/supplier']],
+//
+//        ]],
         ['label' => 'Contact', 'url' => ['/site/contact']],
-        ['label' => 'Comment', 'url' => ['/site/comments']],
+//        ['label' => 'Registration', 'url' => ['/user/signup']],
+//        ['label' => 'Login', 'url' => ['/user/login']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'Signup', 'url' => ['/user/signup']];
+        $menuItems[] = ['label' => 'Login', 'url' => ['/user/login']];
     } else {
         $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
+            . Html::beginForm(['/user/logout'], 'post')
             . Html::submitButton(
                 'Logout (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link logout']

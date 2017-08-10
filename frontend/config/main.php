@@ -10,7 +10,7 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'language' => 'ru',
+//    'language' => 'ru',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
@@ -18,7 +18,7 @@ return [
             'enableCsrfValidation' => false,
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'frontend\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
@@ -42,8 +42,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'novosti' => 'test/index',
-                'novosti/<id:\d+>' => 'test/view',
+                'novosti' => 'news/index',
+                'novosti/<id:\d+>' => 'news/view',
                 'news-count' => 'news/list',
                 'robotnik/<id:\d+>' => 'employee/view',
                 'apie-imone' => 'site/about',

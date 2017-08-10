@@ -1,25 +1,23 @@
 <?php
-/* @var $this yii\web\View */
-/* @var $book frontend\models\Book */
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 
+
+/* @var $this yii\web\View */
+/* @var $model frontend\models\Book */
+
+$this->title = 'Create Book';
+$this->params['breadcrumbs'][] = ['label' => 'Books', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="book-create">
 
-<?php $form = ActiveForm::begin(); ?>
+    <h1><?= Html::encode($this->title) ?></h1>
 
-    <?php echo $form->field($book, 'name'); ?>
+    <?= $this->render('_form', [
+        'model' => $model,
+        'publisher' => $publisher,
 
-    <?php echo $form->field($book, 'isbn'); ?>
+    ]) ?>
 
-    <?php echo $form->field($book, 'date_published'); ?>
-
-    <?php echo $form->field($book, 'publisher_id'); ?>
-
-    <?php echo Html::submitButton('Save', [
-        'class' => 'btn btn-primary',
-    ]); ?>
-
-<?php ActiveForm::end();
-
+</div>

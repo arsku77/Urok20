@@ -19,8 +19,19 @@ class Author extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{author}}';
+        return '{{%author}}';
     }
+
+    public function rules()
+    {
+        return [
+            [['first_name', 'last_name'],'required'],
+            [['first_name', 'last_name'],'string', 'max'=>25],
+            [['birthdate'],'date', 'format'=>'php:Y-m-d'],
+            [['rating'], 'integer'],
+        ];
+    }
+
 
     /**
      * @return string
@@ -45,7 +56,7 @@ class Author extends \yii\db\ActiveRecord
      */
     public function getBooks()
     {//get all books with where one author id from table book_to_author
-        return $this->hasMany(Book::className(), ['id' => 'book_id'])->via('AuthorToBookRelations')->all();
+        return $this->hasMany(Book::className(), ['id' => 'book_id'])->via('authorToBookRelations')->all();
     }
 
     /**

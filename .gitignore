@@ -7,6 +7,7 @@
 /yii
 /yii_test
 /yii_test.bat
+/yii.bat
 
 # phpstorm project files
 .idea
@@ -49,5 +50,40 @@ phpunit.phar
 /frontend/web/index-test.php
 /frontend/web/robots.txt
 
+/backend/web/index.php
+/backend/web/index-test.php
+/backend/web/robots.txt
+
+#config kataloge
+/common/config/main-local.php
+/common/config/params-local.php
+/common/config/test-local.php
+
+/console/config/main-local.php
+/console/config/params-local.php
+
+/frontend/config/main-local.php
+/frontend/config/params-local.php
+/frontend/config/test-local.php
+
+
 # pictures and other files
 /frontend/web/files/
+nxv_1lko5uf90eq4.conf
+nxv_s0fhowwt5o9s.conf
+archyvai/
+/atsarga/
+/.github/
+
+/.bowerrc
+/.gitattributes
+/.travis.yml
+/codeception.yml
+/init
+/init.bat
+/LICENSE.md
+/README.md
+/requirements.php
+/Vagrantfile
+/.gitignore_buvo
+
