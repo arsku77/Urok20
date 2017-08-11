@@ -32,6 +32,11 @@ class Author extends \yii\db\ActiveRecord
         ];
     }
 
+    public function beforeValidate()
+    {
+        $this->first_name = strip_tags($this->first_name);
+        return parent::beforeValidate();
+    }
 
     /**
      * @return string
