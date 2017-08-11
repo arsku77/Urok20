@@ -21,7 +21,6 @@ use yii\widgets\ActiveForm;
     <?php echo Html::submitButton('Save', [
         'class' => 'btn btn-primary'
     ])?>
-
 <?php ActiveForm::end();?>
 
 
